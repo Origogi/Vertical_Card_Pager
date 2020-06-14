@@ -1,14 +1,15 @@
-# vertical_card_pager
+# Vertical ViewPager
 
-A new flutter plugin project.
+Vertical viewpager
 
-## Getting Started
+## Reference
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+![reference](https://user-images.githubusercontent.com/35194820/82746753-4e421980-9dce-11ea-9c80-be521c497d4d.gif)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## TODO
+
+- [x] Make proto type
+- [x] Add or Remove Item effect
+- [x] Add round edge in each item view
+- [x] Handle touch event
+- [ ] deploy plug in
