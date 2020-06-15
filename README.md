@@ -1,6 +1,6 @@
-# Vertical ViewPager
+# Vertical Card Pager
 
-Vertical viewpager
+Vertical Card Pager
 
 ## Reference
 
