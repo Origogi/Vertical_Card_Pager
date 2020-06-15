@@ -6,15 +6,15 @@ Animated Vertical Card Pager
 
 <div align="center">
 
-<img src="https://user-images.githubusercontent.com/35194820/84666831-8b787200-af5c-11ea-9bce-653c00d556fe.gif" >
-<img src="https://user-images.githubusercontent.com/35194820/84666824-89161800-af5c-11ea-898c-34b65e03f6c5.gif" >
-<img src="https://user-images.githubusercontent.com/35194820/84666830-8adfdb80-af5c-11ea-8383-878301d92179.gif" >
+<img src="https://user-images.githubusercontent.com/35194820/84666831-8b787200-af5c-11ea-9bce-653c00d556fe.gif" width="25%">
+<img src="https://user-images.githubusercontent.com/35194820/84666824-89161800-af5c-11ea-898c-34b65e03f6c5.gif"  width="25%">
+<img src="https://user-images.githubusercontent.com/35194820/84666830-8adfdb80-af5c-11ea-8383-878301d92179.gif"  width="25%">
 </div>
 
 
 <div align="center">
 
-<img src="https://user-images.githubusercontent.com/35194820/84659970-2b310280-af53-11ea-9ba0-67fbf9a67639.gif" width="40%">
+<img src="https://user-images.githubusercontent.com/35194820/84659970-2b310280-af53-11ea-9ba0-67fbf9a67639.gif" width="35%">
 
 </div>
 
