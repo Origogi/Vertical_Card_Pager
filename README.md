@@ -18,10 +18,89 @@ Animated Vertical Card Pager
 
 </div>
 
+## Installing
+
+1. Add dependency to `pubspec.yaml`
+
+    *Get the latest version in the 'Installing' tab on pub.dartlang.org*
+
+```dart
+dependencies:
+    vertical_card_pager: ^1.0.0
+```
+
+2. Import the package
+
+```dart
+import 'package:vertical_card_pager/vertical_card_pager.dart';
+```
+
+3. Adding `VerticalCardPager`
+
+*With optional parameters*
+```dart
+@override
+  Widget build(BuildContext context) {
+    final List<String> titles = [
+      "RED",
+      "YELLOW",
+      "BLACK",
+      "CYAN",
+      "BLUE",
+      "GREY",
+    ];
+
+    final List<Widget> images = [
+      Container(
+        color: Colors.red,
+      ),
+        Container(
+        color: Colors.yellow,
+      ),
+        Container(
+        color: Colors.black,
+      ),
+        Container(
+        color: Colors.cyan,
+      ),
+        Container(
+        color: Colors.blue,
+      ),
+        Container(
+        color: Colors.grey,
+      ),
+    ];
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                child: VerticalCardPager(
+                  textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  titles: titles,
+                  images: images,
+                  onPageChanged: (page) {
+                  },
+                  onSelectedItem: (index) {
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+```
+
+## How to use
+
+Check out the **example** app in the [example](example) directory or the 'Example' tab on pub.dartlang.org for a more complete example.
+
 ## Reference
 
 This package's animation is inspired from from this [Dribbble](https://dribbble.com/shots/5097519-California-National-Park-Guide?utm_source=Clipboard_Shot&utm_campaign=KEVINGAUTIER&utm_content=California%20National%20Park%20Guide&utm_medium=Social_Share) art.
-
 
 ## TODO
 

@@ -21,40 +21,39 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-final List<String> titles = [
-  "RED",
-  "YELLOW",
-  "BLACK",
-  "CYAN",
-  "BLUE",
-  "GREY",
-];
-
-final List<Widget> images = [
-  Container(
-    color: Colors.red,
-  ),
-    Container(
-    color: Colors.yellow,
-  ),
-    Container(
-    color: Colors.black,
-  ),
-    Container(
-    color: Colors.cyan,
-  ),
-    Container(
-    color: Colors.blue,
-  ),
-    Container(
-    color: Colors.grey,
-  ),
-
-];
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final List<String> titles = [
+      "RED",
+      "YELLOW",
+      "BLACK",
+      "CYAN",
+      "BLUE",
+      "GREY",
+    ];
+
+    final List<Widget> images = [
+      Container(
+        color: Colors.red,
+      ),
+        Container(
+        color: Colors.yellow,
+      ),
+        Container(
+        color: Colors.black,
+      ),
+        Container(
+        color: Colors.cyan,
+      ),
+        Container(
+        color: Colors.blue,
+      ),
+        Container(
+        color: Colors.grey,
+      ),
+    ];
     return Scaffold(
 
       body: SafeArea(
