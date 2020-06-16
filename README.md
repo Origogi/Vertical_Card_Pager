@@ -1,6 +1,9 @@
-# Vertical Card Pager
 
-Use dynamic and beautiful card view pagers to help you create great apps.
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/35194820/84762308-9a672f00-b005-11ea-84e3-eefc6cf25cf5.png">
+</a>
+</div><br>
+
 
 <div align="center">
 	<a href="https://flutter.io">
@@ -12,7 +15,10 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 </a>
 
 
+
 </div><br>
+
+Use dynamic and beautiful card view pagers to help you create great apps.
 
 
 ## Preview
