@@ -85,8 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Container(
                 padding: EdgeInsets.all(10.0),
                 child: VerticalCardPager(
-                  textStyle: TextStyle(fontFamily: "Bevan",
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                  textStyle: TextStyle(
+                      fontFamily: "Bevan",
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
                   titles: titles,
                   images: images,
                   onPageChanged: (page) {

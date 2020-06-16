@@ -2,6 +2,19 @@
 
 Animated Vertical Card Pager
 
+<div align="center">
+	<a href="https://flutter.io">
+    <img src="https://img.shields.io/badge/Platform-Flutter-yellow.svg"
+      alt="Platform" />
+  </a>
+  <a href="https://pub.dev/packages/vertical_card_pager/versions/1.0.0">
+   <img src="https://img.shields.io/badge/pub-v1.0.0-blue" />
+</a>
+
+
+</div><br>
+
+
 ## Preview
 
 <div align="center">
@@ -108,4 +121,4 @@ This package's animation is inspired from from this [Dribbble](https://dribbble.
 - [x] Add or Remove Item effect
 - [x] Add round edge in each item view
 - [x] Handle touch event
-- [ ] deploy plug in
+- [x] deploy plug in

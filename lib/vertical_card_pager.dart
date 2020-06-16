@@ -11,12 +11,13 @@ class VerticalCardPager extends StatefulWidget {
   final PageSelectedCallback onSelectedItem;
   final TextStyle textStyle;
 
-   VerticalCardPager(
+  VerticalCardPager(
       {@required this.titles,
       @required this.images,
       this.onPageChanged,
       this.textStyle,
-      this.onSelectedItem}) : assert(titles.length == images.length) ;
+      this.onSelectedItem})
+      : assert(titles.length == images.length);
 
   @override
   _VerticalCardPagerState createState() => _VerticalCardPagerState();
@@ -176,7 +177,8 @@ class CardControllerWidget extends StatelessWidget {
       this.images,
       this.cardViewPagerWidth,
       this.cardViewPagerHeight,
-      this.currentPostion, this.textStyle})
+      this.currentPostion,
+      this.textStyle})
       : cardMaxHeight = cardViewPagerHeight * (1 / 2),
         cardMaxWidth = cardViewPagerHeight * (1 / 2);
 
@@ -189,7 +191,7 @@ class CardControllerWidget extends StatelessWidget {
     if (textStyle != null) {
       titleTextStyle = textStyle;
     } else {
-       titleTextStyle = Theme.of(context).textTheme.headline1;
+      titleTextStyle = Theme.of(context).textTheme.headline1;
     }
 
     for (int i = 0; i < images.length; i++) {
@@ -215,8 +217,7 @@ class CardControllerWidget extends StatelessWidget {
                 Align(
                     child: Text(
                   titles[i],
-                  style: titleTextStyle
-                      .copyWith(fontSize: getFontSize(i)),
+                  style: titleTextStyle.copyWith(fontSize: getFontSize(i)),
                   textAlign: TextAlign.center,
                 )),
               ],

@@ -6,7 +6,6 @@ import 'package:flutter/widgets.dart';
 import 'package:vertical_card_pager_example/constant/constant.dart';
 import 'package:vertical_card_pager_example/model/champion.dart';
 
-
 class DetailView extends StatefulWidget {
   final Champion champion;
 

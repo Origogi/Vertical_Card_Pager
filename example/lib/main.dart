@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -21,7 +20,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -38,40 +36,37 @@ class _MyHomePageState extends State<MyHomePage> {
       Container(
         color: Colors.red,
       ),
-        Container(
+      Container(
         color: Colors.yellow,
       ),
-        Container(
+      Container(
         color: Colors.black,
       ),
-        Container(
+      Container(
         color: Colors.cyan,
       ),
-        Container(
+      Container(
         color: Colors.blue,
       ),
-        Container(
+      Container(
         color: Colors.grey,
       ),
     ];
     return Scaffold(
-
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            
             Expanded(
               child: Container(
                 child: VerticalCardPager(
-                  textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  textStyle: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
                   titles: titles,
                   images: images,
                   onPageChanged: (page) {
                     // print(page);
                   },
-                  onSelectedItem: (index) {
-                   
-                  },
+                  onSelectedItem: (index) {},
                 ),
               ),
             ),

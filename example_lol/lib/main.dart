@@ -5,7 +5,6 @@ import 'constant/constant.dart';
 import 'model/champion.dart';
 import 'page/detail_view.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -52,9 +51,9 @@ final List<Widget> images = [
   ),
   Hero(
     tag: "CAMILE",
-    child:ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-          child: Image.asset(
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Image.asset(
         "images/camile_lol.gif",
         fit: BoxFit.cover,
       ),
@@ -63,8 +62,8 @@ final List<Widget> images = [
   Hero(
     tag: "EZREAL",
     child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-          child: Image.asset(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Image.asset(
         "images/ezreal_lol.gif",
         fit: BoxFit.cover,
       ),
@@ -73,8 +72,8 @@ final List<Widget> images = [
   Hero(
     tag: "IRELIA",
     child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-          child: Image.asset(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Image.asset(
         "images/irelia_lol.gif",
         fit: BoxFit.cover,
       ),
@@ -83,8 +82,8 @@ final List<Widget> images = [
   Hero(
     tag: "POPPY",
     child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-          child: Image.asset(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Image.asset(
         "images/poppy_lol.gif",
         fit: BoxFit.cover,
       ),
@@ -92,9 +91,9 @@ final List<Widget> images = [
   ),
   Hero(
     tag: "ZOE",
-    child:ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-          child: Image.asset(
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Image.asset(
         "images/zoe_lol.gif",
         fit: BoxFit.cover,
       ),
@@ -106,7 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: Column(
           children: <Widget>[

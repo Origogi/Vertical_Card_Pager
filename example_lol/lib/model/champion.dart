@@ -1,4 +1,3 @@
-
 import 'package:vertical_card_pager_example/constant/constant.dart';
 
 class Champion {
