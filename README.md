@@ -57,14 +57,7 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
 ```dart
   @override
   Widget build(BuildContext context) {
-    final List<String> titles = [
-      "RED",
-      "YELLOW",
-      "BLACK",
-      "CYAN",
-      "BLUE",
-      "GREY",
-    ];
+    final List<String> titles = ["RED", "YELLOW", "BLACK", "CYAN", "BLUE", "GREY", ];
 
     final List<Widget> images = [
       Container(
