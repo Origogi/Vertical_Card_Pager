@@ -14,12 +14,9 @@
    <img src="https://img.shields.io/badge/pub-v1.0.2-blue" />
 </a>
 
-
-
 </div><br>
 
 Use dynamic and beautiful card view pagers to help you create great apps.
-
 
 ## Preview
 
@@ -45,7 +42,7 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 
 ```dart
 dependencies:
-    vertical_card_pager: ^1.0.0
+    vertical_card_pager: ^1.0.2
 ```
 
 2. Import the package
@@ -58,7 +55,7 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 *With optional parameters*
 ```dart
-@override
+  @override
   Widget build(BuildContext context) {
     final List<String> titles = [
       "RED",
