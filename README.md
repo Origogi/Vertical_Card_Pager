@@ -109,13 +109,13 @@ Check out the **example** app in the [example](example) directory or the 'Exampl
 
 ### Example
 
-[Color](example)
+- [Color](example)
 
-[MacOS](example macos)
+- [MacOS](example macos)
 
-[Fashion](example fashion)
+- [Fashion](example fashion)
 
-[League of Legend](example_lol)
+- [League of Legend](example_lol)
 
 ## Reference
 
