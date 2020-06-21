@@ -107,6 +107,13 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 Check out the **example** app in the [example](example) directory or the 'Example' tab on pub.dartlang.org for a more complete example.
 
+### Example
+
+[Color](example)
+[Mac OS wallpaper](example macos)
+[Fashion](example fashion)
+[League of Legend](example_lol)
+
 ## Reference
 
 This package's animation is inspired from from this [Dribbble](https://dribbble.com/shots/5097519-California-National-Park-Guide?utm_source=Clipboard_Shot&utm_campaign=KEVINGAUTIER&utm_content=California%20National%20Park%20Guide&utm_medium=Social_Share) art.
