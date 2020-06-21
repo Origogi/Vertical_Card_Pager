@@ -110,8 +110,11 @@ Check out the **example** app in the [example](example) directory or the 'Exampl
 ### Example
 
 [Color](example)
-[Mac OS wallpaper](example macos)
+
+[MacOS](example macos)
+
 [Fashion](example fashion)
+
 [League of Legend](example_lol)
 
 ## Reference
