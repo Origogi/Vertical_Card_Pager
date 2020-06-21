@@ -111,9 +111,9 @@ Check out the **example** app in the [example](example) directory or the 'Exampl
 
 - [Color](example)
 
-- [MacOS](example macos)
+- [MacOS](example_macos)
 
-- [Fashion](example fashion)
+- [Fashion](example_fashion)
 
 - [League of Legend](example_lol)
 
