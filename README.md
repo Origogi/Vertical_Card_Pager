@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/Platform-Flutter-yellow.svg"
       alt="Platform" />
   </a>
-  <a href="https://pub.dev/packages/vertical_card_pager/versions/1.0.2">
+  <a href="https://pub.dev/packages/vertical_card_pager">
    <img src="https://img.shields.io/badge/pub-v1.0.3-blue" />
 </a>
 
