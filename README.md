@@ -127,4 +127,5 @@ This package's animation is inspired from from this [Dribbble](https://dribbble.
 - [x] Add or Remove Item effect
 - [x] Add round edge in each item view
 - [x] Handle touch event
-- [x] deploy plug in
+- [x] Deploy plug in
+- [ ] Support Web  
