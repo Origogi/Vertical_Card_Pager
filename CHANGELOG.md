@@ -13,3 +13,7 @@
 ## 1.0.3
 
 * update readme
+
+## 1.1.0
+
+* enable web
