@@ -24,5 +24,4 @@ flutter:
       ios:
         pluginClass: VerticalCardPagerPlugin
       web:
-        pluginClass: VerticalCardPagerPlugin
         fileName : vertical_card_pager.dart
