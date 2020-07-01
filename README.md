@@ -42,7 +42,7 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 
 ```dart
 dependencies:
-    vertical_card_pager: ^1.1.0
+    vertical_card_pager: ^1.1.1
 ```
 
 2. Import the package
