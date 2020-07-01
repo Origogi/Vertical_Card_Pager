@@ -17,3 +17,7 @@
 ## 1.1.0
 
 * enable web
+
+## 1.1.1
+
+* fix build error
