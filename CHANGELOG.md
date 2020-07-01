@@ -21,3 +21,7 @@
 ## 1.1.1
 
 * fix build error
+
+## 1.1.2
+
+* disable web

@@ -42,7 +42,7 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 
 ```dart
 dependencies:
-    vertical_card_pager: ^1.1.1
+    vertical_card_pager: ^1.1.2
 ```
 
 2. Import the package
@@ -128,4 +128,3 @@ This package's animation is inspired from from this [Dribbble](https://dribbble.
 - [x] Add round edge in each item view
 - [x] Handle touch event
 - [x] Deploy plug in
-- [x] Support Web  
