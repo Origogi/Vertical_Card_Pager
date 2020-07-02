@@ -11,7 +11,7 @@
       alt="Platform" />
   </a>
   <a href="https://pub.dev/packages/vertical_card_pager">
-   <img src="https://img.shields.io/badge/pub-v1.1.0-blue" />
+   <img src="https://img.shields.io/badge/pub-v1.1.3-blue" />
 </a>
 
 </div><br>
@@ -42,7 +42,7 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 
 ```dart
 dependencies:
-    vertical_card_pager: ^1.1.2
+    vertical_card_pager: ^1.1.3
 ```
 
 2. Import the package

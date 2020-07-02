@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -195,7 +197,7 @@ class CardControllerWidget extends StatelessWidget {
     }
 
     for (int i = 0; i < images.length; i++) {
-      var cardWidth = cardMaxWidth - 60 * (currentPostion - i).abs();
+      var cardWidth = max(cardMaxWidth - 60 * (currentPostion - i).abs(), 0.0);
       var cardHeight = getCardHeight(i);
 
       var cardTop = getTop(cardHeight, cardViewPagerHeight, i);
