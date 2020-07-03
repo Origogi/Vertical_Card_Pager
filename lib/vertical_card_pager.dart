@@ -12,12 +12,14 @@ class VerticalCardPager extends StatefulWidget {
   final PageChangedCallback onPageChanged;
   final PageSelectedCallback onSelectedItem;
   final TextStyle textStyle;
+  final int initialPage;
 
   VerticalCardPager(
       {@required this.titles,
       @required this.images,
       this.onPageChanged,
       this.textStyle,
+      this.initialPage = 2,
       this.onSelectedItem})
       : assert(titles.length == images.length);
 
@@ -27,35 +29,15 @@ class VerticalCardPager extends StatefulWidget {
 
 class _VerticalCardPagerState extends State<VerticalCardPager> {
   bool isScrolling = false;
-  double currentPosition = 2.0;
-  PageController controller = PageController(initialPage: 2);
-
-  int onTapUp(
-      BuildContext context, double maxHeight, double maxWidth, details) {
-    final RenderBox box = context.findRenderObject();
-    final Offset localOffset = box.globalToLocal(details.globalPosition);
-
-    double dx = localOffset.dx;
-    double dy = localOffset.dy;
-
-    for (int i = 0; i < 5; i++) {
-      double width = getWidth(maxHeight, i);
-      double height = getHeight(maxHeight, i);
-      double left = (maxWidth / 2) - (width / 2);
-      double top = getCardPositionTop(height, maxHeight, i);
-
-      if (top <= dy && dy <= top + height) {
-        if (left <= dx && dx <= left + width) {
-          return i;
-        }
-      }
-    }
-    return -1;
-  }
+  double currentPosition;
+  PageController controller;
 
   @override
   void initState() {
     super.initState();
+
+    currentPosition = widget.initialPage.toDouble();
+    controller = PageController(initialPage: widget.initialPage);
 
     controller.addListener(() {
       setState(() {
@@ -119,6 +101,29 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
         ),
       );
     });
+  }
+
+  int onTapUp(
+      BuildContext context, double maxHeight, double maxWidth, details) {
+    final RenderBox box = context.findRenderObject();
+    final Offset localOffset = box.globalToLocal(details.globalPosition);
+
+    double dx = localOffset.dx;
+    double dy = localOffset.dy;
+
+    for (int i = 0; i < 5; i++) {
+      double width = getWidth(maxHeight, i);
+      double height = getHeight(maxHeight, i);
+      double left = (maxWidth / 2) - (width / 2);
+      double top = getCardPositionTop(height, maxHeight, i);
+
+      if (top <= dy && dy <= top + height) {
+        if (left <= dx && dx <= left + width) {
+          return i;
+        }
+      }
+    }
+    return -1;
   }
 
   double getWidth(maxHeight, i) {

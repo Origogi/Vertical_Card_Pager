@@ -11,7 +11,7 @@
       alt="Platform" />
   </a>
   <a href="https://pub.dev/packages/vertical_card_pager">
-   <img src="https://img.shields.io/badge/pub-v1.1.3-blue" />
+   <img src="https://img.shields.io/badge/pub-v1.2.0-blue" />
 </a>
 
 </div><br>
@@ -42,7 +42,7 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 
 ```dart
 dependencies:
-    vertical_card_pager: ^1.1.3
+    vertical_card_pager: ^1.2.0
 ```
 
 2. Import the package
@@ -86,13 +86,14 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
             Expanded(
               child: Container(
                 child: VerticalCardPager(
-                  textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                  titles: titles,
-                  images: images,
-                  onPageChanged: (page) {
+                  titles: titles,  // required
+                  images: images,  // required
+                  textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold), // optional
+                  onPageChanged: (page) { // optional
                   },
-                  onSelectedItem: (index) {
+                  onSelectedItem: (index) { // optional
                   },
+                  initialPage: 0, // optional
                 ),
               ),
             ),
