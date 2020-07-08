@@ -14,11 +14,11 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'dev'
+      - run: cd example_macos
       - run: flutter config --enable-web
       - run: flutter pub get
       - run: flutter build web --release
       - run: |
-          cd example_macos
           cd build/web
           git init
           # type configurations: your user.email and user.name followed lines 
