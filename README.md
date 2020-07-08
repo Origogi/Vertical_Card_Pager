@@ -108,7 +108,7 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 Check out the **example** app in the [example](example) directory or the 'Example' tab on pub.dartlang.org for a more complete example.
 
-### Example
+## Example
 
 - [Color](example)
 
@@ -117,6 +117,10 @@ Check out the **example** app in the [example](example) directory or the 'Exampl
 - [Fashion](example_fashion)
 
 - [League of Legend](example_lol)
+
+### Example on Web
+
+https://origogi.github.io/Vertical_Card_Pager/#/
 
 ## Reference
 
