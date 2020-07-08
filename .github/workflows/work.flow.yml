@@ -16,11 +16,10 @@ jobs:
           channel: 'dev'
       - run: flutter config --enable-web
       - run: flutter pub get
+      - run: flutter build web --release
+        working-directory: ./example_macos
       - run: |
-          cd example_macos
-          flutter build web --release
-      - run: |
-          cd build/web
+          cd example_macos/build/web
           git init
           # type configurations: your user.email and user.name followed lines 
           # git config --global user.email your_email 
