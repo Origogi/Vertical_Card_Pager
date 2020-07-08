@@ -34,3 +34,7 @@
 The following assertion was thrown building Container(constraints: BoxConstraints(w=-1.1, h=53.4; NOT NORMALIZED), dirty):
 BoxConstraints has a negative minimum width.
 ~~~
+
+## 1.2.0
+
+* Add optinail parameter `initialPage`. `initialPage` was default value `2`

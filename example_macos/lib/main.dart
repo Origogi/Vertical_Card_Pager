@@ -91,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontWeight: FontWeight.bold),
                   titles: titles,
                   images: images,
+                  initialPage: 0,
                   onPageChanged: (page) {
                     // print(page);
                   },
