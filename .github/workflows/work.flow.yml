@@ -27,7 +27,7 @@ jobs:
           git config --global user.email origogi.kim@sk.com
           git config --global user.name origogi
           git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/Origogi/Flutter_Vertical_ViewPager.git
+          git remote add origin https://${{secrets.commit_secret}}@github.com/Origogi/Vertical_Card_Pager.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
