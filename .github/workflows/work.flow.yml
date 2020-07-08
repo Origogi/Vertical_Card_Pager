@@ -27,7 +27,6 @@ jobs:
           git config --global user.email origogi.kim@sk.com
           git config --global user.name origogi
           git status
-          # change this remote url for examle your remote url is https://github.com/onatcipli/flutter_web.git then the following:
           git remote add origin https://${{secrets.commit_secret}}@github.com/Origogi/Flutter_Vertical_ViewPager.git
           git checkout -b gh-pages
           git add --all
