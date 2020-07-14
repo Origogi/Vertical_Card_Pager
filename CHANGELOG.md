@@ -38,3 +38,10 @@ BoxConstraints has a negative minimum width.
 ## 1.2.0
 
 * Add optinail parameter `initialPage`. `initialPage` was default value `2`
+
+## 1.3.0
+
+* Add optinail parameter `align`.
+    * LEFT
+    * CENTER
+    * RIGHT

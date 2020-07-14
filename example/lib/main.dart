@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPageChanged: (page) {
                     // print(page);
                   },
+                  align: ALIGN.CENTER,
                   onSelectedItem: (index) {},
                 ),
               ),
