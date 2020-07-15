@@ -63,9 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.white, fontWeight: FontWeight.bold),
                   titles: titles,
                   images: images,
-                  onPageChanged: (page) {
-                    // print(page);
-                  },
+                  onPageChanged: (page) {},
                   align: ALIGN.CENTER,
                   onSelectedItem: (index) {},
                 ),
