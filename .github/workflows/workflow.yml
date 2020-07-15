@@ -17,17 +17,14 @@ jobs:
       - run: flutter config --enable-web
       - run: flutter pub get
       - run: flutter build web --release
-        working-directory: ./example_macos
+        working-directory: ./example_macos # change path which exist lib/main.dart
       - run: |
-          cd example_macos/build/web
+          cd example_macos/build/web  # change path to [existed lib/main.dart path]/build/web
           git init
-          # type configurations: your user.email and user.name followed lines 
-          # git config --global user.email your_email 
-          # git config --global user.name your_name 
-          git config --global user.email origogi.kim@sk.com
-          git config --global user.name origogi
+          git config --global user.email rlawjdxo1212@naver.com # change your email
+          git config --global user.name origogi                 # change your name
           git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/Origogi/Vertical_Card_Pager.git
+          git remote add origin https://${{secrets.commit_secret}}@github.com/Origogi/Vertical_Card_Pager.git # change your repository
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
