@@ -45,3 +45,7 @@ BoxConstraints has a negative minimum width.
     * LEFT
     * CENTER
     * RIGHT
+
+## 1.4.0
+
+* Enable Web
