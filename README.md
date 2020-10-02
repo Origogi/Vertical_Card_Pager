@@ -39,7 +39,7 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 
 - Change Alignment
 
-| Left | Center | Right |
+| Left | Center(Default) | Right |
 |:--------:|:--------:|:--------:|
 |![left](https://user-images.githubusercontent.com/35194820/87397350-2eb9b700-c5ef-11ea-8015-27901cbaa669.png)|![center](https://user-images.githubusercontent.com/35194820/87397353-2f524d80-c5ef-11ea-9bc5-7d4b6c72364d.png)|![right](https://user-images.githubusercontent.com/35194820/87397346-2ceff380-c5ef-11ea-88a1-d6e53612f9bc.png)|
 
