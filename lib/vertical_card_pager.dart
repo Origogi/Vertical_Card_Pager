@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-typedef PageChangedCallback = void Function(double page);
+typedef PageChangedCallback = void Function(double? page);
 typedef PageSelectedCallback = void Function(int index);
 
 enum ALIGN { LEFT, CENTER, RIGHT }
@@ -11,15 +11,15 @@ enum ALIGN { LEFT, CENTER, RIGHT }
 class VerticalCardPager extends StatefulWidget {
   final List<String> titles;
   final List<Widget> images;
-  final PageChangedCallback onPageChanged;
-  final PageSelectedCallback onSelectedItem;
-  final TextStyle textStyle;
+  final PageChangedCallback? onPageChanged;
+  final PageSelectedCallback? onSelectedItem;
+  final TextStyle? textStyle;
   final int initialPage;
   final ALIGN align;
 
   VerticalCardPager(
-      {@required this.titles,
-      @required this.images,
+      {required this.titles,
+      required this.images,
       this.onPageChanged,
       this.textStyle,
       this.initialPage = 2,
@@ -33,8 +33,8 @@ class VerticalCardPager extends StatefulWidget {
 
 class _VerticalCardPagerState extends State<VerticalCardPager> {
   bool isScrolling = false;
-  double currentPosition;
-  PageController controller;
+  double? currentPosition;
+  PageController? controller;
 
   @override
   void initState() {
@@ -43,12 +43,12 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
     currentPosition = widget.initialPage.toDouble();
     controller = PageController(initialPage: widget.initialPage);
 
-    controller.addListener(() {
+    controller!.addListener(() {
       setState(() {
-        currentPosition = controller.page;
+        currentPosition = controller!.page;
 
         if (widget.onPageChanged != null) {
-          Future(() => widget.onPageChanged(currentPosition));
+          Future(() => widget.onPageChanged!(currentPosition));
         }
       });
     });
@@ -65,17 +65,17 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
           isScrolling = true;
         },
         onTapUp: (details) {
-          if ((currentPosition - currentPosition.floor()).abs() <= 0.15) {
+          if ((currentPosition! - currentPosition!.floor()).abs() <= 0.15) {
             int selectedIndex = onTapUp(
                 context, constraints.maxHeight, constraints.maxWidth, details);
 
             if (selectedIndex == 2) {
               if (widget.onSelectedItem != null) {
-                Future(() => widget.onSelectedItem(currentPosition.round()));
+                Future(() => widget.onSelectedItem!(currentPosition!.round()));
               }
             } else if (selectedIndex >= 0) {
-              int goToPage = currentPosition.toInt() + selectedIndex - 2;
-              controller.animateToPage(goToPage,
+              int goToPage = currentPosition!.toInt() + selectedIndex - 2;
+              controller!.animateToPage(goToPage,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOutExpo);
             }
@@ -117,12 +117,12 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
 
     for (int i = 0; i < 5; i++) {
       double width = getWidth(maxHeight, i);
-      double height = getHeight(maxHeight, i);
-      double left = getStartPositon(maxWidth, width);
+      double height = getHeight(maxHeight, i)!;
+      double? left = getStartPositon(maxWidth, width);
       double top = getCardPositionTop(height, maxHeight, i);
 
       if (top <= dy && dy <= top + height) {
-        if (left <= dx && dx <= left + width) {
+        if (left! <= dx && dx <= left + width) {
           return i;
         }
       }
@@ -130,8 +130,8 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
     return -1;
   }
 
-  double getStartPositon(cardViewPagerWidth, cardWidth) {
-    double position = 0;
+  double? getStartPositon(cardViewPagerWidth, cardWidth) {
+    double? position = 0;
 
     switch (widget.align) {
       case ALIGN.LEFT:
@@ -153,15 +153,15 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
     return cardMaxWidth - 60 * (i - 2).abs();
   }
 
-  double getHeight(maxHeight, i) {
-    double cardMaxHeight = maxHeight / 2;
+  double? getHeight(maxHeight, i) {
+    double? cardMaxHeight = maxHeight / 2;
 
     if (i == 2) {
       return cardMaxHeight;
     } else if (i == 0 || i == 4) {
-      return cardMaxHeight - cardMaxHeight * (4 / 5) - 10;
+      return cardMaxHeight! - cardMaxHeight * (4 / 5) - 10;
     } else
-      return cardMaxHeight - cardMaxHeight * (4 / 5);
+      return cardMaxHeight! - cardMaxHeight * (4 / 5);
   }
 }
 
@@ -191,22 +191,22 @@ double getCardPositionTop(double cardHeight, double viewHeight, int i) {
 }
 
 class CardControllerWidget extends StatelessWidget {
-  final double currentPostion;
+  final double? currentPostion;
   final double cardMaxWidth;
   final double cardMaxHeight;
   final double cardViewPagerHeight;
-  final double cardViewPagerWidth;
-  final TextStyle textStyle;
-  final ALIGN align;
+  final double? cardViewPagerWidth;
+  final TextStyle? textStyle;
+  final ALIGN? align;
 
-  final List titles;
-  final List images;
+  final List? titles;
+  final List? images;
 
   CardControllerWidget(
       {this.titles,
       this.images,
       this.cardViewPagerWidth,
-      this.cardViewPagerHeight,
+      required this.cardViewPagerHeight,
       this.currentPostion,
       this.align,
       this.textStyle})
@@ -215,7 +215,7 @@ class CardControllerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> cardList = List();
+    List<Widget> cardList = [];
 
     var titleTextStyle;
 
@@ -225,8 +225,8 @@ class CardControllerWidget extends StatelessWidget {
       titleTextStyle = Theme.of(context).textTheme.headline1;
     }
 
-    for (int i = 0; i < images.length; i++) {
-      var cardWidth = max(cardMaxWidth - 60 * (currentPostion - i).abs(), 0.0);
+    for (int i = 0; i < images!.length; i++) {
+      var cardWidth = max(cardMaxWidth - 60 * (currentPostion! - i).abs(), 0.0);
       var cardHeight = getCardHeight(i);
 
       var cardTop = getTop(cardHeight, cardViewPagerHeight, i);
@@ -243,11 +243,11 @@ class CardControllerWidget extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Positioned.fill(
-                  child: images[i],
+                  child: images![i],
                 ),
                 Align(
                     child: Text(
-                  titles[i],
+                  titles![i],
                   style: titleTextStyle.copyWith(fontSize: getFontSize(i)),
                   textAlign: TextAlign.center,
                 )),
@@ -266,7 +266,7 @@ class CardControllerWidget extends StatelessWidget {
   }
 
   double getOpacity(int i) {
-    double diff = (currentPostion - i);
+    double diff = (currentPostion! - i);
 
     if (diff >= -2 && diff <= 2) {
       return 1.0;
@@ -280,7 +280,7 @@ class CardControllerWidget extends StatelessWidget {
   }
 
   double getTop(double cardHeight, double viewHeight, int i) {
-    double diff = (currentPostion - i);
+    double diff = (currentPostion! - i);
     double diffAbs = diff.abs();
 
     double basePosition = (viewHeight / 2) - (cardHeight / 2);
@@ -314,7 +314,7 @@ class CardControllerWidget extends StatelessWidget {
   }
 
   double getCardHeight(int index) {
-    double diff = (currentPostion - index).abs();
+    double diff = (currentPostion! - index).abs();
 
     if (diff >= 0.0 && diff < 1.0) {
       return cardMaxHeight - cardMaxHeight * (4 / 5) * ((diff - diff.floor()));
@@ -333,8 +333,8 @@ class CardControllerWidget extends StatelessWidget {
   }
 
   double getFontSize(int index) {
-    double diffAbs = (currentPostion - index).abs();
-    diffAbs = num.parse(diffAbs.toStringAsFixed(2));
+    double diffAbs = (currentPostion! - index).abs();
+    diffAbs = num.parse(diffAbs.toStringAsFixed(2)) as double;
 
     double maxFontSize = 50;
     if (diffAbs >= 0.0 && diffAbs < 1.0) {
@@ -360,10 +360,10 @@ class CardControllerWidget extends StatelessWidget {
         position = 0;
         break;
       case ALIGN.CENTER:
-        position = (cardViewPagerWidth / 2) - (cardWidth / 2);
+        position = (cardViewPagerWidth! / 2) - (cardWidth / 2);
         break;
       case ALIGN.RIGHT:
-        position = cardViewPagerWidth - cardWidth;
+        position = cardViewPagerWidth! - cardWidth;
         break;
     }
 

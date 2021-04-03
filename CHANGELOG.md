@@ -49,3 +49,7 @@ BoxConstraints has a negative minimum width.
 ## 1.4.0
 
 * Enable Web
+
+## 1.5.0
+
+* dart null-safety migration
