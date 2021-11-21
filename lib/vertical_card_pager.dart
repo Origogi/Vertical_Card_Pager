@@ -33,8 +33,8 @@ class VerticalCardPager extends StatefulWidget {
 
 class _VerticalCardPagerState extends State<VerticalCardPager> {
   bool isScrolling = false;
-  double? currentPosition;
-  PageController? controller;
+  late double currentPosition;
+  late PageController controller;
 
   @override
   void initState() {
@@ -43,9 +43,9 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
     currentPosition = widget.initialPage.toDouble();
     controller = PageController(initialPage: widget.initialPage);
 
-    controller!.addListener(() {
+    controller.addListener(() {
       setState(() {
-        currentPosition = controller!.page;
+        currentPosition = controller.page ?? 0;
 
         if (widget.onPageChanged != null) {
           Future(() => widget.onPageChanged!(currentPosition));
@@ -65,17 +65,17 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
           isScrolling = true;
         },
         onTapUp: (details) {
-          if ((currentPosition! - currentPosition!.floor()).abs() <= 0.15) {
+          if ((currentPosition - currentPosition.floor()).abs() <= 0.15) {
             int selectedIndex = onTapUp(
                 context, constraints.maxHeight, constraints.maxWidth, details);
 
             if (selectedIndex == 2) {
               if (widget.onSelectedItem != null) {
-                Future(() => widget.onSelectedItem!(currentPosition!.round()));
+                Future(() => widget.onSelectedItem!(currentPosition.round()));
               }
             } else if (selectedIndex >= 0) {
-              int goToPage = currentPosition!.toInt() + selectedIndex - 2;
-              controller!.animateToPage(goToPage,
+              int goToPage = currentPosition.toInt() + selectedIndex - 2;
+              controller.animateToPage(goToPage,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOutExpo);
             }
@@ -101,7 +101,7 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
                   return Container();
                 },
               ),
-            )
+            ),
           ],
         ),
       );
@@ -117,12 +117,12 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
 
     for (int i = 0; i < 5; i++) {
       double width = getWidth(maxHeight, i);
-      double height = getHeight(maxHeight, i)!;
+      double height = getHeight(maxHeight, i);
       double? left = getStartPositon(maxWidth, width);
       double top = getCardPositionTop(height, maxHeight, i);
 
       if (top <= dy && dy <= top + height) {
-        if (left! <= dx && dx <= left + width) {
+        if (left <= dx && dx <= left + width) {
           return i;
         }
       }
@@ -130,8 +130,8 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
     return -1;
   }
 
-  double? getStartPositon(cardViewPagerWidth, cardWidth) {
-    double? position = 0;
+  double getStartPositon(cardViewPagerWidth, cardWidth) {
+    double position = 0;
 
     switch (widget.align) {
       case ALIGN.LEFT:
@@ -153,15 +153,15 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
     return cardMaxWidth - 60 * (i - 2).abs();
   }
 
-  double? getHeight(maxHeight, i) {
-    double? cardMaxHeight = maxHeight / 2;
+  double getHeight(maxHeight, i) {
+    double cardMaxHeight = maxHeight / 2;
 
     if (i == 2) {
       return cardMaxHeight;
     } else if (i == 0 || i == 4) {
-      return cardMaxHeight! - cardMaxHeight * (4 / 5) - 10;
+      return cardMaxHeight - cardMaxHeight * (4 / 5) - 10;
     } else
-      return cardMaxHeight! - cardMaxHeight * (4 / 5);
+      return cardMaxHeight - cardMaxHeight * (4 / 5);
   }
 }
 
@@ -197,7 +197,7 @@ class CardControllerWidget extends StatelessWidget {
   final double cardViewPagerHeight;
   final double? cardViewPagerWidth;
   final TextStyle? textStyle;
-  final ALIGN? align;
+  final ALIGN align;
 
   final List? titles;
   final List? images;
@@ -208,7 +208,7 @@ class CardControllerWidget extends StatelessWidget {
       this.cardViewPagerWidth,
       required this.cardViewPagerHeight,
       this.currentPostion,
-      this.align,
+      required this.align,
       this.textStyle})
       : cardMaxHeight = cardViewPagerHeight * (1 / 2),
         cardMaxWidth = cardViewPagerHeight * (1 / 2);
