@@ -5,21 +5,21 @@ on:
       - master
 jobs:
   build:
-    name: Build Web
+    name: Build And Deploy Github Pages
     env:
       my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: subosito/flutter-action@v1
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
         with:
-          channel: 'dev'
+          channel: 'stable'
       - run: flutter config --enable-web
       - run: flutter pub get
       - run: flutter build web --release
-        working-directory: ./example_macos
+        working-directory: ./example
       - run: |
-          cd example_macos/build/web
+          cd example/build/web
           git init
           git config --global user.email rlawjdxo1212@naver.com
           git config --global user.name origogi

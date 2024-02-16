@@ -53,3 +53,8 @@ BoxConstraints has a negative minimum width.
 ## 1.5.0
 
 * dart null-safety migration
+
+## 1.6.0
+
+* Add optinail parameter `physics`.
+* Migration to Lastest Flutter SDK

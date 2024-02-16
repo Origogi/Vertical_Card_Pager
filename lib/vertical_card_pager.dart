@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 typedef PageChangedCallback = void Function(double? page);
 typedef PageSelectedCallback = void Function(int index);
@@ -13,6 +12,7 @@ class VerticalCardPager extends StatefulWidget {
   final List<Widget> images;
   final PageChangedCallback? onPageChanged;
   final PageSelectedCallback? onSelectedItem;
+  final ScrollPhysics? physics;
   final TextStyle? textStyle;
   final int initialPage;
   final ALIGN align;
@@ -24,6 +24,7 @@ class VerticalCardPager extends StatefulWidget {
       this.textStyle,
       this.initialPage = 2,
       this.onSelectedItem,
+      this.physics,
       this.align = ALIGN.CENTER})
       : assert(titles.length == images.length);
 
@@ -94,6 +95,7 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
             ),
             Positioned.fill(
               child: PageView.builder(
+                physics: widget.physics,
                 scrollDirection: Axis.vertical,
                 itemCount: widget.images.length,
                 controller: controller,
@@ -222,7 +224,7 @@ class CardControllerWidget extends StatelessWidget {
     if (textStyle != null) {
       titleTextStyle = textStyle;
     } else {
-      titleTextStyle = Theme.of(context).textTheme.headline1;
+      titleTextStyle = Theme.of(context).textTheme.titleLarge;
     }
 
     for (int i = 0; i < images!.length; i++) {
