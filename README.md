@@ -118,7 +118,15 @@ Check out the **example** app in the [example](example) directory or the 'Exampl
 
 ### Example on Web
 
+<div align="center">
+
+<img src="https://github.com/Origogi/Flutter-Credit-Card-Input-Form/assets/35194820/852dc052-9115-4880-8afa-7ee18afc0caa" width="70%">
+
 https://origogi.github.io/Vertical_Card_Pager/#/
+
+</div>
+
+
 
 ## Reference
 
