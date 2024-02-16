@@ -40,16 +40,6 @@ Use dynamic and beautiful card view pagers to help you create great apps.
 |:--------:|:--------:|:--------:|
 |![left](https://user-images.githubusercontent.com/35194820/87397350-2eb9b700-c5ef-11ea-8015-27901cbaa669.png)|![center](https://user-images.githubusercontent.com/35194820/87397353-2f524d80-c5ef-11ea-9bc5-7d4b6c72364d.png)|![right](https://user-images.githubusercontent.com/35194820/87397346-2ceff380-c5ef-11ea-88a1-d6e53612f9bc.png)|
 
-## Web Sample
-
-<div align="center">
-<img src="https://user-images.githubusercontent.com/35194820/94888765-09816a00-04b5-11eb-9ecc-db68de687654.png">
-</div>
-<div align="center">
-   <A href="https://origogi.github.io/Vertical_Card_Pager/#/">Web Link</A>
-</div>
-
-
 ## Installing
 
 1. Add dependency to `pubspec.yaml`
