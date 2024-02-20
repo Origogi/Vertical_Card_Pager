@@ -62,3 +62,7 @@ BoxConstraints has a negative minimum width.
 ## 1.6.1
 
 * Fix README.md
+
+## 1.6.2
+
+* Add information in pubspec.yaml

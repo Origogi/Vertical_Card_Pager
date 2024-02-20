@@ -1,8 +1,24 @@
 name: vertical_card_pager
 description: Use dynamic and beautiful card view pagers to help you create great apps.
-version: 1.6.1
+version: 1.6.2
 homepage: https://origogi.github.io/
 repository: https://github.com/Origogi/Vertical_Card_Pager
+
+topics:
+  - ui
+  - widget
+  - card
+  - pager
+
+platforms:
+  android:
+  ios:
+  web:
+
+screenshots:
+  - description: Vertical Card Pager Example
+    path: screenshot/screenshot.png
+
 environment:
   sdk: ">=3.0.0 <4.0.0"
   flutter: ">=3.0.0"
@@ -14,7 +30,3 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-screenshots:
-  - description: Vertical Card Pager Example
-    path: screenshot/screenshot.png
