@@ -58,3 +58,7 @@ BoxConstraints has a negative minimum width.
 
 * Add optinail parameter `physics`.
 * Migration to Lastest Flutter SDK
+
+## 1.6.1
+
+* Fix README.md
