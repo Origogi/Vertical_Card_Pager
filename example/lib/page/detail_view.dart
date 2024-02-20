@@ -71,8 +71,8 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
                     children: [
                       Hero(
                         tag: champion.name.toUpperCase(),
-                        child: Image.asset(
-                          "images/${champion.name.toLowerCase()}_lol.gif",
+                        child: Image.network(
+                          champion.imageUrl,
                           fit: BoxFit.fitWidth,
                           width: double.infinity,
                         ),

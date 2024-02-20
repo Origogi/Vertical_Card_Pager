@@ -29,81 +29,11 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-final List<String> titles = [
-  "AKALI",
-  "CAMILE",
-  "EZREAL",
-  "IRELIA",
-  "POPPY",
-  "ZOE",
-];
-
-final List<Widget> images = [
-  Hero(
-    tag: "AKALI",
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        "images/akali_lol.gif",
-        fit: BoxFit.cover,
-      ),
-    ),
-  ),
-  Hero(
-    tag: "CAMILE",
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        "images/camile_lol.gif",
-        fit: BoxFit.cover,
-      ),
-    ),
-  ),
-  Hero(
-    tag: "EZREAL",
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        "images/ezreal_lol.gif",
-        fit: BoxFit.cover,
-      ),
-    ),
-  ),
-  Hero(
-    tag: "IRELIA",
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        "images/irelia_lol.gif",
-        fit: BoxFit.cover,
-      ),
-    ),
-  ),
-  Hero(
-    tag: "POPPY",
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        "images/poppy_lol.gif",
-        fit: BoxFit.cover,
-      ),
-    ),
-  ),
-  Hero(
-    tag: "ZOE",
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-        "images/zoe_lol.gif",
-        fit: BoxFit.cover,
-      ),
-    ),
-  ),
-];
-
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final champions = championsMap.values.toList();
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -123,19 +53,26 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: Container(
                 child: VerticalCardPager(
-                  // textStyle: TextStyle(color : Colors.red),
-                  titles: titles,
-                  images: images,
-                  onPageChanged: (page) {
-                    // print(page);
-                  },
+                  titles: champions.map((e) => e.name.toUpperCase()).toList(),
+                  images: champions
+                      .map((e) => Hero(
+                            tag: e.name.toUpperCase(),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image.network(
+                                e.imageUrl,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ))
+                      .toList(),
+                  onPageChanged: (page) {},
                   onSelectedItem: (index) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => DetailView(
-                                champion:
-                                    championsMap[titles[index].toLowerCase()]!,
+                                champion: champions[index],
                               )),
                     );
                   },
