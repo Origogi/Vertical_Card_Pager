@@ -17,14 +17,27 @@ class VerticalCardPager extends StatefulWidget {
   final int initialPage;
   final ALIGN align;
 
-  VerticalCardPager(
-      {required this.titles,
+  /// ### its optionnal, `auto adjusted`
+  final double? width;
+
+  /// ### IMPORTANT:
+  /// If true, the **top and bottom Item** `size` will be reduced.
+  /// ```dart
+  ///    unfocusIndexShouldBeSmaller : true,
+  /// ```
+  final bool unfocusIndexShouldBeSmaller;
+
+  const VerticalCardPager(
+      {super.key,
+      required this.titles,
       required this.images,
       this.onPageChanged,
       this.textStyle,
       this.initialPage = 2,
       this.onSelectedItem,
       this.physics,
+      this.width,
+      this.unfocusIndexShouldBeSmaller = true,
       this.align = ALIGN.CENTER})
       : assert(titles.length == images.length);
 
@@ -85,8 +98,10 @@ class _VerticalCardPagerState extends State<VerticalCardPager> {
         child: Stack(
           children: [
             CardControllerWidget(
+              width: widget.width,
               titles: widget.titles,
               images: widget.images,
+              unfocusIndexShouldBeSmaller: widget.unfocusIndexShouldBeSmaller,
               textStyle: widget.textStyle,
               currentPostion: currentPosition,
               cardViewPagerHeight: constraints.maxHeight,
@@ -200,17 +215,21 @@ class CardControllerWidget extends StatelessWidget {
   final double? cardViewPagerWidth;
   final TextStyle? textStyle;
   final ALIGN align;
-
+  final double? width;
+  final bool unfocusIndexShouldBeSmaller;
   final List? titles;
   final List? images;
 
-  CardControllerWidget(
-      {this.titles,
+  const CardControllerWidget(
+      {super.key,
+      this.titles,
       this.images,
       this.cardViewPagerWidth,
       required this.cardViewPagerHeight,
       this.currentPostion,
+      this.unfocusIndexShouldBeSmaller = true,
       required this.align,
+      this.width,
       this.textStyle})
       : cardMaxHeight = cardViewPagerHeight * (1 / 2),
         cardMaxWidth = cardViewPagerHeight * (1 / 2);
@@ -228,9 +247,20 @@ class CardControllerWidget extends StatelessWidget {
     }
 
     for (int i = 0; i < images!.length; i++) {
-      var cardWidth = max(cardMaxWidth - 60 * (currentPostion! - i).abs(), 0.0);
-      var cardHeight = getCardHeight(i);
+      var cardWidth;
+      if (unfocusIndexShouldBeSmaller && width == null) {
+        cardWidth = max(cardMaxWidth - 60 * (currentPostion! - i).abs(), 0.0);
+      } else if (unfocusIndexShouldBeSmaller && width != null) {
+        cardWidth = max(width! - 60 * (currentPostion! - i).abs(), 0.0);
+      } else if (!unfocusIndexShouldBeSmaller && width == null) {
+        cardWidth = max(cardMaxWidth, 0.0);
+      } else if (!unfocusIndexShouldBeSmaller && width != null) {
+        cardWidth = width!;
+      } else {
+        cardWidth = max(cardMaxWidth - 60 * (currentPostion! - i).abs(), 0.0);
+      }
 
+      var cardHeight = getCardHeight(i);
       var cardTop = getTop(cardHeight, cardViewPagerHeight, i);
 
       Widget card = Positioned.directional(
@@ -238,25 +268,18 @@ class CardControllerWidget extends StatelessWidget {
         top: cardTop,
         start: getStartPositon(cardWidth),
         child: Opacity(
-          opacity: getOpacity(i),
-          child: Container(
-            width: cardWidth,
-            height: cardHeight,
-            child: Stack(
-              children: <Widget>[
-                Positioned.fill(
-                  child: images![i],
-                ),
-                Align(
-                    child: Text(
-                  titles![i],
-                  style: titleTextStyle.copyWith(fontSize: getFontSize(i)),
-                  textAlign: TextAlign.center,
-                )),
-              ],
-            ),
-          ),
-        ),
+            opacity: getOpacity(i),
+            child: SizedBox(
+                width: cardWidth,
+                height: cardHeight,
+                child: Stack(children: <Widget>[
+                  Positioned.fill(child: images![i]),
+                  Align(
+                      child: Text(titles![i],
+                          style:
+                              titleTextStyle.copyWith(fontSize: getFontSize(i)),
+                          textAlign: TextAlign.center))
+                ]))),
       );
 
       cardList.add(card);
