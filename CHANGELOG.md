@@ -1,30 +1,38 @@
-## 1.0.0
+## 1.6.3
 
-* first release
+* Add `unfocusIndexShouldBeSmaller` parameter. If you want to unfocus index should be smaller than focus index, set `true`. Default value is `false`.
 
-## 1.0.1
+## 1.6.2
 
-* remove unused assets
+* Add information in pubspec.yaml
 
-## 1.0.2
+## 1.6.1
 
-* update readme
+* Fix README.md
 
-## 1.0.3
+## 1.6.0
 
-* update readme
+* Add optinail parameter `physics`.
+* Migration to Lastest Flutter SDK
 
-## 1.1.0
+## 1.5.0
 
-* enable web
+* dart null-safety migration
 
-## 1.1.1
+## 1.4.0
 
-* fix build error
+* Enable Web
 
-## 1.1.2
+## 1.3.0
 
-* disable web
+* Add optinail parameter `align`.
+    * LEFT
+    * CENTER
+    * RIGHT
+
+## 1.2.0
+
+* Add optinail parameter `initialPage`. `initialPage` was default value `2`
 
 ## 1.1.3
 
@@ -35,34 +43,30 @@ The following assertion was thrown building Container(constraints: BoxConstraint
 BoxConstraints has a negative minimum width.
 ~~~
 
-## 1.2.0
+## 1.1.2
 
-* Add optinail parameter `initialPage`. `initialPage` was default value `2`
+* disable web
 
-## 1.3.0
+## 1.1.1
 
-* Add optinail parameter `align`.
-    * LEFT
-    * CENTER
-    * RIGHT
+* fix build error
 
-## 1.4.0
+## 1.1.0
 
-* Enable Web
+* enable web
 
-## 1.5.0
+## 1.0.3
 
-* dart null-safety migration
+* update readme
 
-## 1.6.0
+## 1.0.2
 
-* Add optinail parameter `physics`.
-* Migration to Lastest Flutter SDK
+* update readme
 
-## 1.6.1
+## 1.0.1
 
-* Fix README.md
+* remove unused assets
 
-## 1.6.2
+## 1.0.0
 
-* Add information in pubspec.yaml
+* first release
